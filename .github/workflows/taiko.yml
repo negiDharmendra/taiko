@@ -17,6 +17,7 @@ jobs:
           node-version: '12'
       - name: install
         run: npm install
+      - run: echo ======
       - name: unit-tests
         run: npm test
 
