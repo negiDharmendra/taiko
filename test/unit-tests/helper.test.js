@@ -8,6 +8,7 @@ describe.only('Helper', () => {
   describe('waitUntil', () => {
     let callCount, maxCallCOunt;
     const condition = async () => {
+      console.log(`--Inside condition ${callCount}`);
       if (callCount === maxCallCOunt) {
         return true;
       }
