@@ -4,7 +4,7 @@ chai.use(chaiAsPromised);
 const expect = chai.expect;
 let { waitUntil } = require('../../lib/helper');
 
-describe('Helper', () => {
+describe.only('Helper', () => {
   describe('waitUntil', () => {
     let callCount, maxCallCOunt;
     const condition = async () => {
