@@ -17,12 +17,12 @@ describe.only('Helper', () => {
     };
     beforeEach(() => {
       callCount = 0;
-      maxCallCOunt = 10;
+      maxCallCOunt = 3;
     });
 
     it('should retry for given time', async () => {
-      await waitUntil(condition, 1, 100);
-      expect(callCount).to.be.equal(10);
+      await waitUntil(condition, 1, 50);
+      expect(callCount).to.be.equal(3);
     });
 
     it('should fail after given time', async () => {
@@ -40,10 +40,10 @@ describe.only('Helper', () => {
             throw new Error('Actual error message.');
           },
           1,
-          100,
+          50,
         ),
       ).to.be.eventually.rejectedWith('Actual error message.');
-      expect(callCount).to.be.equal(10);
+      expect(callCount).to.be.equal(3);
     });
 
     it('should not retry on BrowserProcessCrashed error', async () => {
