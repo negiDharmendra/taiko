@@ -21,7 +21,7 @@ describe.only('Helper', () => {
     });
 
     it('should retry for given time', async () => {
-      await waitUntil(condition, 1, 50);
+      await waitUntil(condition, 1, 100);
       expect(callCount).to.be.equal(10);
     });
 
@@ -40,7 +40,7 @@ describe.only('Helper', () => {
             throw new Error('Actual error message.');
           },
           1,
-          20,
+          100,
         ),
       ).to.be.eventually.rejectedWith('Actual error message.');
       expect(callCount).to.be.equal(10);
